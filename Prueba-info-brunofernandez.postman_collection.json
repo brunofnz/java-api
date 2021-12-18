@@ -1,0 +1,450 @@
+{
+	"info": {
+		"_postman_id": "5ba843c4-2f2f-4f43-9086-c6851c7b4437",
+		"name": "Prueba-info-brunofernandez",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Emprendimientos",
+			"item": [
+				{
+					"name": "Cargar emprendimiento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Chocolates de cielo\",\r\n    \"descripcion\": \"Son Chocolates hechos puramente caseros y son muy ricos, elaborados por la tia Nona\",\r\n    \"contenido\": \"Comenzo antes de la pandemia y la idea es conseguir inversores y llegar a ser regional y nacionalmente reconocidos\",\r\n    \"url\": \"www.chocolatesdecielo.com.ar\",\r\n    \"objetivo\": 6000000,\r\n    \"tags\": [\r\n        {\r\n            \"nombre\": \"Dulces\"\r\n        }, \r\n        {\r\n            \"nombre\": \"Choclates\"\r\n        },\r\n        {\r\n            \"nombre\": \"Cafe\"\r\n        }\r\n    ],\r\n    \"votos\": [],\r\n    \"eventos\": []\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/4/emprendimientos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"4",
+								"emprendimientos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incribir un emprendimiento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/emprendimientos/4/eventos/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"emprendimientos",
+								"4",
+								"eventos",
+								"2"
+							]
+						},
+						"description": " mediante un id del mismo y el id del evento"
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar un emprendimiento",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Tortas deliciosas\",\r\n    \"descripcion\": \"Son las tortas mas deciliciosas que podrias probar\",\r\n    \"contenido\": \"Todo nace desde el corazon\",\r\n    \"creadoEn\": \"2021/12/16\",\r\n    \"objetivo\": 5000.25,\r\n    \"publicado\": true,\r\n    \"url\": \"aca va una url con fotos\",\r\n    \"tags\": [\r\n            { \r\n                \"nombre\": \"Programacion\" \r\n            }\r\n        ],\r\n    \"votos\": [],\r\n    \"eventos\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/emprendimientos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"emprendimientos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Eventos",
+			"item": [
+				{
+					"name": "Crear evento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Dulces Chaqueños\",\r\n    \"detalles\":\"Conozca a las personas que hacen que chaco posea los dulces mas ricos de la region y el mundo\",\r\n    \"fechaInicio\": \"2023/12/14\",\r\n    \"fechaFinalizacion\": \"2023/12/19\",\r\n    \"estado\":\"ABIERTO\",\r\n    \"emprendimientos\":[],\r\n    \"premio\":5000.00,\r\n    \"activo\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/eventos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"eventos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar evento",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Dulciland Chaco\",\r\n    \"detalles\":\"Deleitese con los sabores de la region\",\r\n    \"premio\":12000.00,\r\n    \"estado\":\"ABIERTO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/eventos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"eventos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar evento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/eventos/1/eliminar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"eventos",
+								"1",
+								"eliminar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver eventos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/eventos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"eventos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar estado del evento",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/eventos/2/actualizar-estado",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"eventos",
+								"2",
+								"actualizar-estado"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tags",
+			"item": [
+				{
+					"name": "Ver emprendimientos por tags.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/emprendimientos/Dulces/tags",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"emprendimientos",
+								"Dulces",
+								"tags"
+							]
+						},
+						"description": "En este caso buscamos por el tag \"Dulces\""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Crear usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Bruno\",\r\n    \"apellido\":\"Fernandez\",\r\n    \"email\":\"asd@gmail.com\",\r\n    \"password\":\"123454321\",\r\n    \"activo\": true,\r\n    \"ciudad\":\"Vilelas\",\r\n    \"provincia\":\"Chaco\",\r\n    \"pais\":\"Argentina\",\r\n    \"roles\":\"USUARIO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Baja logica de un usuario por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/usuarios/2/eliminar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"2",
+								"eliminar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Alejandro\",\r\n    \"apellido\":\"Fernandez\",\r\n    \"email\":\"emailcambiado@gmail.com\",\r\n    \"password\":\"contrasea\",\r\n    \"activo\":true,\r\n    \"ciudad\":\"Resistencia\",\r\n    \"provincia\":\"Chaco\",\r\n    \"pais\":\"Argentina\",\r\n    \"roles\":\"USUARIO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/usuarios/6",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"6"
+							]
+						},
+						"description": "se modifico su email en este caso"
+					},
+					"response": []
+				},
+				{
+					"name": "Ver usuarios por Ciudad",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuarios?ciudad=Vilelas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios"
+							],
+							"query": [
+								{
+									"key": "ciudad",
+									"value": "Vilelas"
+								}
+							]
+						},
+						"description": "En este caso se traen usuarios de Vilelas"
+					},
+					"response": []
+				},
+				{
+					"name": "Ver un usuario dado una fecha",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuarios?fecha=2021-12-18T12:53:43",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios"
+							],
+							"query": [
+								{
+									"key": "fecha",
+									"value": "2021-12-18T12:53:43"
+								}
+							]
+						},
+						"description": "Para que funcione este metodo tnemos que pasar la fecha con la hora exacta 2021-12-18T12:53:43"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Votos",
+			"item": [
+				{
+					"name": "Realizar voto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"generado\":\"MOBILE\",\r\n    \"usuarioId\": 3,\r\n    \"emprendimientoId\": 1,\r\n    \"emitido\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/votos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"votos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver votos de usuario por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/votos/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"votos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
